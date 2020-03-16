@@ -5,25 +5,29 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/cojo");
 
 const seed = [
   {
-    empID: 1,
+    companyID: 123456,
     name: "Meg",
+    email: "mbsutter4@gmail.com",
     department: "HR",
     birthday: "1995-05-20T06:01:17.171Z",
     hired: "2020-03-16T06:01:17.171Z",
     holidays: ["Valentines Day","Easter","Halloween","Thanksgiving","Christmas"],
-    favoriteSnacks: ["Baby Carrots", "Chocolate"],
-    coffeeOrder: "black",
-    dietaryRestrictions: "gluten"
+    snacks: ["Baby Carrots", "Chocolate"],
+    coffee: "black",
+    dietaryRestrictions: "gluten",
+    down: true
   },
   {
-    empID: 2,
+    companyID: 123456,
     name: "Lane",
+    email: "lsmith@uga.edu",
     department: "Communications",
     birthday: "1993-05-07T06:01:17.171Z",
     hired: "2020-03-16T06:01:17.171Z",
     holidays: ["Valentines Day","Easter","Halloween","Thanksgiving","Christmas"],
-    favoriteSnacks: ["Chickpea wraps", "Twin Snakes"],
-    coffeeOrder: "sugar and cream"
+    snacks: ["Chickpea wraps", "Twin Snakes"],
+    coffee: "sugar and cream",
+    down: false
   }
 ]
 

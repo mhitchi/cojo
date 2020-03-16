@@ -1,8 +1,18 @@
 const mongoose = require("mongoose");
 
 const employeeSchema = new mongoose.Schema({
+  //company
+  companyID: {
+    type: Number,
+    required: true
+  },
   //name
   name: {
+    type: String,
+    required: true
+  },
+  //email
+  email: {
     type: String,
     required: true
   },
@@ -40,6 +50,11 @@ const employeeSchema = new mongoose.Schema({
   dietaryRestrictions: {
     type: Array,
     default: []
+  },
+  //want to hang out
+  down: {
+    type: Boolean,
+    default: true
   }
 });
 
