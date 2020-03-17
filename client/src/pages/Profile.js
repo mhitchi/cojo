@@ -16,3 +16,17 @@
 //image from url
 //info //edit buttons for user
 //sidebar -> directory || calendar || feedback || pair's profile
+import React from "react";
+import CoProfile from "../components/CoProfile";
+import MyProfile from "../components/MyProfile";
+
+const Profile = () => {
+  return (
+    <>
+    <CoProfile />
+    <MyProfile />
+    </>
+  )
+};
+
+export default Profile;

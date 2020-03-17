@@ -3,6 +3,7 @@ import React from "react";
 const Calendar = () => {
   return (
     <>
+    <h1>Calendar Component</h1>
     </>
   )
 };

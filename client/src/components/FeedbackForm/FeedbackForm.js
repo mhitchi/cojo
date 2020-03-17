@@ -1,8 +1,9 @@
 import React from "react";
 
-const FeebackForm = () => {
+const FeedbackForm = () => {
   return (
     <>
+    <h1>Feedback form component</h1>
     </>
   )
 };
