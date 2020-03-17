@@ -7,13 +7,13 @@ const db = require("../models");
 
 //post route for making a new user
 
-//put route for editing user's profile page
+//put/patch route for editing user's profile page
 
 //get route for another employee's profile page
 
 //get route for dates?
 
-//put route for calendar?
+//put/patch route for calendar?
 
 //post route for dates?
 
