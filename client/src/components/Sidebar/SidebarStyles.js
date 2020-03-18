@@ -19,8 +19,8 @@
 
 const styles={
   nav: {
-    fontFamily: "'Varela Round', sans-serif",
-    fontSize: "1.25em",
+    fontFamily: "'Righteous', cursive",
+    fontSize: "1.5em",
     color: "#00a0a0",
     marginLeft: ".25em"
   },
