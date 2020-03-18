@@ -4,11 +4,15 @@
 //header with user image -> profile
 //sidebar -> directory || calendar || feedback || pair's profile
 import React from "react";
+import Header from "../components/Header";
+import Sidebar from "../components/Sidebar";
 import Calendar from "../components/Calendar";
 
 const CalendarPage = () => {
   return (
     <>
+    <Header />
+    <Sidebar />
     <Calendar />
     </>
   )
