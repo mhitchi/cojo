@@ -40,8 +40,8 @@ const MyProfile = () => {
   */
 
   // Component method
-  function handleFileUpload({ file }) {
-    console.log({ file })
+  function handleFileUpload(e) {
+    console.log(e.target.value)
   //   const file = files[0];
   //   this.props.actions.uploadRequest({
   //     file,
