@@ -55,6 +55,10 @@ const employeeSchema = new mongoose.Schema({
   down: {
     type: Boolean,
     default: true
+  },
+  employeeImg: {
+    type: String,
+    required: false
   }
 });
 

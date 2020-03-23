@@ -18,16 +18,16 @@ function App() {
         <Route exact path="/" render={() => <Redirect to="/myprofile"></Redirect>} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/myprofile" render={() => (
-          <Profile page="myprofile"/> //pass props
+          <Profile /> //pass props
         )} />
         <Route exact path="/directory" render={() => (
-          <Directory page="directory"/> //pass props
+          <Directory /> //pass props
         )} />
         <Route exact path="/feedback" render={()=> (
-          <Feedback page="feedback"/> //pass props
+          <Feedback /> //pass props
         )} />
         <Route exact path="/calendar" render={() => (
-          <CalendarPage page="calendar"/> //pass props
+          <CalendarPage /> //pass props
         )} />
       </Switch>
     </Router>

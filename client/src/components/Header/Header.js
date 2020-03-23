@@ -5,7 +5,7 @@ import styles from "./HeaderStyles";
 const Header = () => {
   return (
     <>
-    <Row fluid={true} style={styles.background}>
+    <Row fluid="true" style={styles.background}>
       <Col xs={2} style={styles.logo}>
         <h1>COJO</h1>
       </Col>

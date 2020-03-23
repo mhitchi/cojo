@@ -21,7 +21,7 @@ const styles={
   nav: {
     fontFamily: "'Righteous', cursive",
     fontSize: "1.5em",
-    color: "#00a0a0",
+    color: "white",
     marginLeft: ".25em"
   },
   item: {
@@ -33,7 +33,7 @@ const styles={
   currentItem: {
     backgroundImage: "linear-gradient(to right, #fea49f, #f6f5f3)",
     borderRadius: "50px 0px 0px 50px",
-    color: "#00a0a0",
+    color: "white",
     padding: "1em",
     margin: ".25em"
   }
