@@ -42,11 +42,11 @@ const MyProfile = () => {
   // Component method
   function handleFileUpload(e) {
     console.log(e.target.value)
-  //   const file = files[0];
-  //   this.props.actions.uploadRequest({
-  //     file,
-  //     name: 'Awesome Cat Pic'
-  //   })
+    const file = e.target.value;
+    uploadDocumentRequest({
+      file,
+      name: 'Awesome Cat Pic'
+    })
   }
 
   return (
@@ -56,6 +56,7 @@ const MyProfile = () => {
         <Col xs={3}>
           {/* <ImgUpload /> */}
           <input type="file" onChange={handleFileUpload} />
+          {/* get employee image */}
         </Col>
       </Row>
     </>
