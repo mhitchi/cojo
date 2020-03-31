@@ -92,14 +92,14 @@ const path = require("path");
 const s3 = new aws.S3({
   accessKeyId: process.env.accessKeyId,
   secretAccessKey: process.env.secretAccessKey,
-  Bucket: 'cojo'
+  Bucket: 'work-hq'
 });
 
 //single upload
 const imgUpload = multer({
   storage: sulterS3({
     s3: s3,
-    bucket: 'cojo',
+    bucket: 'work-hq',
     acl: 'public-read',
     key: function (req, file, cb) {
       cb(null, path.basename( file.originalname, path.extname( file.originalname ) ) + "-" + Date.now() + path.extname( file.originalname ) )
@@ -127,10 +127,10 @@ function checkFileType( file, cb ){
   }
 }
 
-//route POST api/employees/img-upload
+//route POST /employees/img-upload
 
 router.post( '/img-upload', ( req, res ) => {
-  profileImgUpload( req, res, ( error ) => {
+  imgUpload( req, res, ( error ) => {
     //console.log( 'requestOkokok', req.file );
     //console.log( 'error', error );
     if( error ){

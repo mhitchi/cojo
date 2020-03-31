@@ -73,6 +73,7 @@ class MyProfile extends Component {
     //if file selected
     if( this.state.selectedFile ){
       data.append( 'employeeImage', this.state.selectedFile, this.state.selectedFile.name );
+      //ERROR 404 NOT FOUND
       axios.post( '/employees/img-upload', data, {
         headers: {
           'accept': 'application/json',
@@ -93,7 +94,7 @@ class MyProfile extends Component {
             } else {
               //success
               let fileName = response.data;
-              console.log( 'fileName: ', fileName );
+              console.log( 'filedata: ', fileName );
               console.log( 'File Uploaded!', '#3089cf' );
             }
         }

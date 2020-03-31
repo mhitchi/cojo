@@ -18,7 +18,7 @@ module.exports = router;
 
 //image upload
 const employeeImage = require('./routes/employees');
-app.use('/employees',employeeImage);
+app.use('/employees', employeeImage);
 
 //serve up static assets
 if ( process.env.NODE_ENV === 'production' ) {
