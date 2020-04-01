@@ -9,6 +9,8 @@ const router = express.Router();
 const app = express();
 const apiRoutes = require("./routes/api/apiRoutes");
 
+require('dotenv').config();
+
 //define middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -57,3 +59,5 @@ const employeeRoutes = require("./routes/api/profile");
 app.listen(PORT, function() {
   console.log(`==> API server now on port ${PORT}!`);
 });
+
+module.exports = app;

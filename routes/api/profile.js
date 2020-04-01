@@ -1,3 +1,7 @@
+const dotenv = require('dotenv');
+//initialize:
+dotenv.config();
+
 const express = require("express");
 const router = express.Router();
 // const mongoose = require("mongoose");
@@ -5,7 +9,6 @@ const multer = require("multer");
 const multerS3 = require( 'multer-s3' );
 const aws = require("aws-sdk");
 const path = require("path");
-const dotenv = require('dotenv').config({path: __dirname + '/.env'});
 
 // https://www.youtube.com/watch?v=srPXMt1Q0nY file uploading tutorial
 
@@ -14,8 +17,8 @@ const dotenv = require('dotenv').config({path: __dirname + '/.env'});
 //create new s3 object
 const s3 = new aws.S3({
   accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-  Bucket: 'work-hq'
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+  // Bucket: 'work-hq'
 });
 
 //single upload
@@ -23,6 +26,7 @@ const profileImgUpload = multer({
   storage: multerS3({
     s3: s3,
     bucket: 'work-hq',
+    contentType: multerS3.AUTO_CONTENT_TYPE,
     acl: 'public-read',
     key: function (req, file, cb) {
       cb(null, path.basename( file.originalname, path.extname( file.originalname ) ) + "-" + Date.now() + path.extname( file.originalname ) )
@@ -44,6 +48,8 @@ function checkFileType( file, cb ){
   const mimetype = filetypes.test( file.mimetype );
 
   if( mimetype && extname ){
+    console.log(process.env.AWS_ACCESS_KEY_ID);
+    console.log(process.env.AWS_SECRET_ACCESS_KEY);
     return cb( null, true );
   } else {
     cb( 'Error: images only!' );

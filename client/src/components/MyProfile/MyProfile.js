@@ -5,7 +5,9 @@ import Sidebar from "../Sidebar";
 import axios from "axios";
 import $ from "jquery";
 
-const dotenv = require('dotenv').config({path: __dirname + '/.env'});
+const dotenv = require('dotenv');
+//initialize:
+dotenv.config();
 
 // import ImgUpload from "../ImgUpload";
 
@@ -68,8 +70,6 @@ class MyProfile extends Component {
     this.setState({
       selectedFile: event.target.files[0]
     });
-    console.log(process.env.AWS_ACCESS_KEY_ID);
-    console.log(process.env.AWS_SECRET_ACCESS_KEY);
   };
 
   handleSingleFileUpload = ( event ) => {
