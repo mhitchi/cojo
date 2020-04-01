@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const multer = require("multer");
+const multerS3 = require( 'multer-s3' );
 const aws = require("aws-sdk");
 const path = require("path");
 
