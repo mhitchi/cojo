@@ -39,3 +39,4 @@ router.put("/employees/:id", (req, res) => {
   res.send("complete");
 });
 
+module.exports = router;
