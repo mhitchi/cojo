@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3001;
 const router = express.Router();
 const app = express();
-const apiRoutes = require("./routes/apiRoutes");
+const apiRoutes = require("./routes/api/apiRoutes");
 
 //define middleware
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -17,8 +17,8 @@ app.use(bodyParser.json());
 module.exports = router;
 
 //image upload
-const employeeImage = require('./routes/employees');
-app.use('/employees', employeeImage);
+const profile = require('./routes/api/profile');
+app.use('/api/profile', profile);
 
 //serve up static assets
 if ( process.env.NODE_ENV === 'production' ) {
@@ -37,7 +37,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/cojo", {
 //use apiRoutes
 app.use("/api", apiRoutes);
 
-const employeeRoutes = require("./routes/employees");
+const employeeRoutes = require("./routes/api/profile");
 
 //send every request to the React app
 //define any API routes before this runs

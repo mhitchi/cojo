@@ -4,6 +4,9 @@ import { Row, Col } from "reactstrap";
 import Sidebar from "../Sidebar";
 import axios from "axios";
 import $ from "jquery";
+
+const dotenv = require('dotenv').config({path: __dirname + '/.env'});
+
 // import ImgUpload from "../ImgUpload";
 
 //ROUND 1 OR 2
@@ -55,9 +58,9 @@ class MyProfile extends Component {
   constructor( props ){
     super( props );
     this.state = {
-      selectedFile: null,
+      selectedFile: null
       //for multiple uploads:
-      selectedFiles: null
+      // selectedFiles: null
     }
   }
 
@@ -65,6 +68,8 @@ class MyProfile extends Component {
     this.setState({
       selectedFile: event.target.files[0]
     });
+    console.log(process.env.AWS_ACCESS_KEY_ID);
+    console.log(process.env.AWS_SECRET_ACCESS_KEY);
   };
 
   handleSingleFileUpload = ( event ) => {
@@ -74,12 +79,12 @@ class MyProfile extends Component {
     if( this.state.selectedFile ){
       //appends name, value, filename
       //NOT WORKING???
-      data.append( 'employeeImage', this.state.selectedFile, this.state.selectedFile.name );
+      data.append( 'profileImage', this.state.selectedFile, this.state.selectedFile.name );
       // UNDEFINED???
       //console.log('data employee img: ', data.employeeImage);
       console.log('THIS: ', this.state.selectedFile);
       //ERROR 404 NOT FOUND
-      axios.post( '/employees/img-upload', data, {
+      axios.post( '/api/profile/profile-img-upload', data, {
         headers: {
           'accept': 'application/json',
           'Accept-Language': 'en-US, en; q=0.8'
