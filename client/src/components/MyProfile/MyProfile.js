@@ -72,13 +72,18 @@ class MyProfile extends Component {
 
     //if file selected
     if( this.state.selectedFile ){
+      //appends name, value, filename
+      //NOT WORKING???
       data.append( 'employeeImage', this.state.selectedFile, this.state.selectedFile.name );
+      // UNDEFINED???
+      //console.log('data employee img: ', data.employeeImage);
+      console.log('THIS: ', this.state.selectedFile);
       //ERROR 404 NOT FOUND
       axios.post( '/employees/img-upload', data, {
         headers: {
           'accept': 'application/json',
-          'Accept-Language': 'en-US, en; q=0.8',
-          'Content-Type': `multipart/form-data; boundary=${data._boundary}`,
+          'Accept-Language': 'en-US, en; q=0.8'
+          // 'Content-Type': `multipart/form-data; boundary=${data._boundary}`,
         }
       }).then( (response) => {
         if( 200 === response.status ){
@@ -93,6 +98,7 @@ class MyProfile extends Component {
               }
             } else {
               //success
+              console.log("fileName: ", response.data);
               let fileName = response.data;
               console.log( 'filedata: ', fileName );
               console.log( 'File Uploaded!', '#3089cf' );

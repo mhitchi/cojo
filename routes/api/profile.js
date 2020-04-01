@@ -97,7 +97,7 @@ const s3 = new aws.S3({
 
 //single upload
 const imgUpload = multer({
-  storage: sulterS3({
+  storage: multerS3({
     s3: s3,
     bucket: 'work-hq',
     acl: 'public-read',
