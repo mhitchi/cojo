@@ -16,8 +16,8 @@ const path = require("path");
 
 //create new s3 object
 const s3 = new aws.S3({
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+  accessKeyId: 'AKIA3T3WTGFUX26HXUSE',
+  secretAccessKey: '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'
   // Bucket: 'work-hq'
 });
 

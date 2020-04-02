@@ -9,7 +9,8 @@ const router = express.Router();
 const app = express();
 const apiRoutes = require("./routes/api/apiRoutes");
 
-require('dotenv').config();
+const dotenv = require('dotenv');
+dotenv.config();
 
 //define middleware
 app.use(bodyParser.urlencoded({ extended: false }));
