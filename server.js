@@ -1,18 +1,33 @@
+//https://www.youtube.com/watch?v=e-gb9IBfSw8 tutorial for file uploading with AWS, multer, MERN
 const express = require("express");
+const bodyParser = require("body-parser");
 const path = require("path");
 const mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 3001;
+const router = express.Router();
 const app = express();
-const apiRoutes = require("./routes/apiRoutes");
+const apiRoutes = require("./routes/api/apiRoutes");
+
+const dotenv = require('dotenv');
+dotenv.config();
 
 //define middleware
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+//export router so server.js file can pick it up
+module.exports = router;
+
+//image upload
+const profile = require('./routes/api/profile');
+app.use('/api/profile', profile);
 
 //serve up static assets
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+if ( process.env.NODE_ENV === 'production' ) {
+	// Set a static folder
+	app.use( express.static( 'client/build' ) );
+	app.get( '*', ( req, res ) => res.sendFile( path.resolve( __dirname, 'client', 'build', 'index.html' ) ) );
 }
 
 //connect to MongoDB
@@ -25,7 +40,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/cojo", {
 //use apiRoutes
 app.use("/api", apiRoutes);
 
-const employeeRoutes = require("./routes/employees");
+const employeeRoutes = require("./routes/api/profile");
 
 //send every request to the React app
 //define any API routes before this runs
@@ -45,3 +60,5 @@ const employeeRoutes = require("./routes/employees");
 app.listen(PORT, function() {
   console.log(`==> API server now on port ${PORT}!`);
 });
+
+module.exports = app;

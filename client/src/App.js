@@ -6,6 +6,7 @@ import Directory from "./pages/DirectoryPage";
 import Feedback from "./pages/Feedback";
 import CalendarPage from "./pages/CalendarPage";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+require('dotenv').config();
 
 function App() {
   return (

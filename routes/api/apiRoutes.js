@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const db = require("../models");
+const db = require("../../models");
 
 //get route for fetching all employees for that company
 router.get("/api/employees/:coID", (req, res) => {
@@ -39,3 +39,4 @@ router.put("/employees/:id", (req, res) => {
   res.send("complete");
 });
 
+module.exports = router;
