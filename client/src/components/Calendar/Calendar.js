@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Row, Col } from "reactstrap";
 import Sidebar from "../Sidebar";
+import "./CalendarStyles.css";
 // import ApiCalendar from 'react-google-calendar-api';
 import { format, parse, startOfWeek, addDays, startOfMonth, endOfMonth, endOfWeek, isSameMonth, isSameDay, addMonths, subMonths } from "date-fns";
 
@@ -114,11 +115,16 @@ class Calendar extends Component {
 
   render() {
     return (
-      <div className="calendar">
-        {this.renderHeader()}
-        {this.renderDays()}
-        {this.renderCells()}
-      </div>
+      <Row>
+        <Sidebar page="calendar"/>
+        <Col xs={9}>
+          <div className="calendar">
+            {this.renderHeader()}
+            {this.renderDays()}
+            {this.renderCells()}
+          </div>
+        </Col>
+      </Row>
     );
   }
 }
