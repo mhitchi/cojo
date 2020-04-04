@@ -9,53 +9,6 @@ const dotenv = require('dotenv');
 //initialize:
 dotenv.config();
 
-// import ImgUpload from "../ImgUpload";
-
-//ROUND 1 OR 2
-// const MyProfile = () => {
-
-//   // Redux action
-//   function uploadSuccess({ data }) {
-//     return {
-//       type: 'UPLOAD_DOCUMENT_SUCCESS',
-//       data,
-//     };
-//   }
-
-//   function uploadFail(error) {
-//     return {
-//       type: 'UPLOAD_DOCUMENT_FAIL',
-//       error,
-//     };
-//   }
-
-//   function uploadDocumentRequest({ file, name }) {  
-//     let data = new FormData();
-//     data.append('file', document);
-//     data.append('name', name);
-
-//     return (dispatch) => {
-//       axios.post('/files', data)
-//         .then(response => dispatch(uploadSuccess(response)))
-//         .catch(error => dispatch(uploadFail(error)))
-//     }
-//   }
-
-//   /*
-//   ... A lot of Redux / React boilerplate happens here 
-//   like mapDispatchToProps and mapStateToProps and @connect ...
-//   */
-
-//   // Component method
-//   function handleFileUpload(e) {
-//     console.log(e.target.value)
-//     const file = e.target.value;
-//     uploadDocumentRequest({
-//       file,
-//       name: 'Awesome Cat Pic'
-//     })
-//   }
-
 class MyProfile extends Component {
   constructor( props ){
     super( props );
@@ -111,6 +64,7 @@ class MyProfile extends Component {
         }
       }).catch( (error) => {
         //if another error
+        //THROWING 404
         console.log( error, 'red' );
       });
     } else {
@@ -127,7 +81,6 @@ class MyProfile extends Component {
         <Row>
           <Sidebar page="myprofile"/>
           <Col xs={3}>
-            {/* <ImgUpload /> */}
             <input type="file" onChange={this.handleSingleFileChange} />
             <button onClick={this.handleSingleFileUpload}>Upload</button>
             {/* get employee image */}

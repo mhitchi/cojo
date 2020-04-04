@@ -56,8 +56,6 @@ function checkFileType( file, cb ){
   }
 }
 
-//route POST /employees/img-upload
-
 router.post( '/profile-img-upload', ( req, res ) => {
   profileImgUpload( req, res, ( error ) => {
     //console.log( 'requestOkokok', req.file );
