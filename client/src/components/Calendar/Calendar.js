@@ -48,7 +48,19 @@ class Calendar extends Component {
       );
     }
 
-    return <div className="days row">{days}</div>;
+    const week = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    return <container>
+      <row className="days row">
+        <div className="col-xs-2" style={{textAlign: "center"}}>{week[0]}</div>
+        <div className="col-xs-2" style={{textAlign: "center"}}>{week[1]}</div>
+        <div className="col-xs-2" style={{textAlign: "center"}}>{week[2]}</div>
+        <div className="col-xs-2" style={{textAlign: "center"}}>{week[3]}</div>
+        <div className="col-xs-2" style={{textAlign: "center"}}>{week[4]}</div>
+        <div className="col-xs-2" style={{textAlign: "center"}}>{week[5]}</div>
+        <div className="col-xs-2" style={{textAlign: "center"}}>{week[6]}</div>
+      </row>
+    </container>
   }
 
   renderCells() {
