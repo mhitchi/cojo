@@ -19,7 +19,7 @@
 
 const styles={
   nav: {
-    fontFamily: "'Righteous', cursive",
+    fontFamily: "'Quicksand', sans-serif",
     fontSize: "1.5em",
     color: "white",
     marginLeft: ".25em"
