@@ -16,7 +16,13 @@ router.get("/api/employees/:coID", (req, res) => {
 
 //get route for another employee's profile page
 
-//get route for dates?
+//get route for events?
+router.get("/api/events/:companyID", (req, res) => {
+  console.log(req.params.companyID);
+  db.Events.find({ companyID: req.params.companyID })
+    .then(events => res.json(events))
+    .catch(err => res.status(422).end());
+});
 
 //put route for calendar?
 
