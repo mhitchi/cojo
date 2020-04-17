@@ -15,9 +15,14 @@ class Calendar extends Component {
   render() {
     return (
       <>
-      <ScheduleComponent>
-        <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
-      </ScheduleComponent>
+      <Row>
+        <Sidebar page="myprofile"/>
+        <Col md={10}>
+          <ScheduleComponent>
+            <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
+          </ScheduleComponent>
+        </Col>
+      </Row>
       </>
     );
   }
